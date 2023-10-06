@@ -1,0 +1,7 @@
+#!/bin/bash
+
+[ -z "$CFILE" ] && { echo "Error: CFILE variable is not set."; exit 1; }
+
+gcc -S -masm=intel "$CFILE" -o "${CFILE%.*}.s"
+
+echo "Assembly code generated and saved in ${CFILE%.*}.s"
