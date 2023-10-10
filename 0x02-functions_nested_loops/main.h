@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
+
 int _putchar(char c);
 void print_alphabet(void);
 void print_alphabet_x10(void);
@@ -15,5 +17,6 @@ int add(int a, int b);
 void more_numbers(void);
 void print_10_digits(void);
 void print_to_98(int n);
+void print_times_table(int n);
 
 #endif /* MAIN_H */
