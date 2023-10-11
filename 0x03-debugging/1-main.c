@@ -7,14 +7,19 @@
 
 int main(void)
 {
-	int i = 0;
+	int i;
 
 	printf("Infinite loop incoming :(\n");
 
-	while (i < 10)
-	{
-		putchar(i++)
-	}
+	i = 0;
+
+	/*
+	 * Commented out the code causing the infinite loop
+	 * while (i < 10)
+	 * {
+	 *     putchar(i);
+	 * }
+	 */
 
 	printf("Infinite loop avoided! \\o/\n");
 
