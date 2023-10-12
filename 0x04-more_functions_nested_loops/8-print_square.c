@@ -23,3 +23,12 @@ void print_square(int size)
 		_putchar('\n');
 	}
 }
+
+/* Example of usage in main.c file */
+int main(void)
+{
+	print_square(2);
+	print_square(10);
+	print_square(0);
+	return (0);
+}
