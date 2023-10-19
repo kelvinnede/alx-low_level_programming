@@ -1,62 +1,54 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
  * infinite_add - Adds two numbers
- * @n1: The first number
- * @n2: The second number
+ * @n1: The first number as a string
+ * @n2: The second number as a string
  * @r: Buffer to store the result
- * @size_r: Size of the buffer
+ * @size_r: Buffer size
  *
- * Return: Pointer to the result, or 0 if result can't be stored
+ * Return: Pointer to the result
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1 = 0, len2 = 0, carry = 0, sum = 0;
+	int len1, len2, carry, sum, i, j;
 
-	while (n1[len1] != '\0')
-		len1++;
+	for (len1 = 0; n1[len1]; len1++)
+		;
 
-	while (n2[len2] != '\0')
-		len2++;
+	for (len2 = 0; n2[len2]; len2++)
+		;
 
-	if (len1 + 1 > size_r || len2 + 1 > size_r)
+	if (len1 + 2 > size_r || len2 + 2 > size_r)
 		return (0);
 
-	n1 += len1 - 1;
-	n2 += len2 - 1;
-	r += size_r - 1;
-	*r = '\0';
+	carry = 0;
 
-	len1--;
-	len2--;
-
-	while (len1 >= 0 || len2 >= 0)
+	for (i = len1 - 1, j = len2 - 1; i >= 0 || j >= 0 || carry; i--, j--)
 	{
 		sum = carry;
 
-		if (len1 >= 0)
-			sum += (*n1 - '0');
+		if (i >= 0)
+			sum += n1[i] - '0';
 
-		if (len2 >= 0)
-			sum += (*n2 - '0');
+		if (j >= 0)
+			sum += n2[j] - '0';
 
+		r[len1 + len2] = sum % 10 + '0';
 		carry = sum / 10;
-		*r = (sum % 10) + '0';
 
-		n1--;
-		n2--;
-		r--;
+		len1++;
+		len2++;
 	}
 
-	if (carry)
+	r[len1 + len2] = '\0';
+
+	for (i = 0, j = len1 + len2 - 1; i < j; i++, j--)
 	{
-		if (size_r == 1)
-			return (0);
-		*r = carry + '0';
+		char temp = r[i];
+		r[i] = r[j];
+		r[j] = temp;
 	}
-	else
-		r++;
 
 	return (r);
 }
