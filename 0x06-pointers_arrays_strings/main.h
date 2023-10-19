@@ -5,7 +5,7 @@ int _putchar(char c);
 void _puts(char *str);
 char *_strcpy(char *dest, const char *src);
 int _atoi(char *s);
-void _strcat(char *dest, const char *src);
+char *_strcat(char *dest, char *src);
 void reverse_array(int *a, int n);
 char *string_toupper(char *);
 char *cap_string(char *);
