@@ -11,6 +11,9 @@ void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 void simple_print_buffer(char *buffer, unsigned int size);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void _putchar(char c);
+void print_error(void);
+int is_digit(char *str);
 
 #endif /* MAIN_H */
 
