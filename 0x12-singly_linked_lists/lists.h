@@ -1,10 +1,15 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-#include <stdlib.h>
+#include <stddef.h>
 #include <stdio.h>
 
-/* Structure definition for linked list node */
+/**
+ * struct list_s - Structure definition for linked list node
+ * @str: String data
+ * @len: Length of the string
+ * @next: Pointer to the next node
+ */
 typedef struct list_s
 {
 	char *str;          /* String data */
