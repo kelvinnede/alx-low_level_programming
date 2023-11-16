@@ -2,6 +2,7 @@
 #define LISTS_H
 
 #include <stddef.h>
+#include <stdio.h>
 
 /* Structure definition for linked list node */
 typedef struct list_s
