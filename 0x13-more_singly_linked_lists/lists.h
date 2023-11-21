@@ -12,8 +12,8 @@
  */
 typedef struct listint_s
 {
-	int n;
-	struct listint_s *next;
+    int n;
+    struct listint_s *next;
 } listint_t;
 
 /* Function prototypes */
@@ -30,6 +30,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 int delete_nodeint_at_index(listint_t **head, unsigned int index);
 listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
+void print_address(const void *addr);
+void print_number(int n);
+void print_loop(const void *addr, int value);
 void free_listint_safe(listint_t **h);
 
 #endif /* LISTS_H */
