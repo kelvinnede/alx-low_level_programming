@@ -7,7 +7,7 @@
  *
  * Return: The size of the list that was freed
  */
-void free_listint_safe(listint_t **h)
+void free_listint_safe(listint_t **h);
 {
 	listint_t *current, *next;
 
