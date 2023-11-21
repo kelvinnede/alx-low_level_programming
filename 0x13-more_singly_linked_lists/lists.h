@@ -34,6 +34,7 @@ void print_address(const void *addr);
 void print_number(int n);
 void print_loop(const void *addr, int value);
 void free_listint_safe(listint_t **h);
+listint_t *find_listint_loop(listint_t *head);
 
 #endif /* LISTS_H */
 
