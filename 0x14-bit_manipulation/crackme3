@@ -1,0 +1,15 @@
+#!/bin/bash
+
+for digit in {0..9}; do
+    # Replace the following line with the actual command that checks the digit in your program
+    # ./your_program $password > /dev/null 2>&1
+
+    # Dummy command for testing
+    if [ $digit -eq 5 ]; then
+        echo "Congratulations!"
+        exit 0
+    fi
+done
+
+echo "Incorrect password."
+exit 1
