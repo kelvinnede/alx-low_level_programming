@@ -41,7 +41,8 @@ void read_elf_header(int fd)
 
 	printf("ELF Header:\n");
 	printf("	Magic:   ");
-	for (int i = 0; i < 16; i++)
+	int i;
+	for (i = 0; i < 16; i++)
 		printf("%02x ", magic[i]);
 	printf("\n");
 	printf("	Class: ELF%d\n", class == 1 ? 32 : 64);
