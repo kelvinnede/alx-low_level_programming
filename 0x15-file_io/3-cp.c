@@ -22,6 +22,23 @@ char *create_buffer(void)
 }
 
 /**
+ * close_file - Closes file descriptors.
+ * @fd: The file descriptor to be closed.
+ */
+void close_file(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
  * main - Copies the contents of one file to another.
  * @argc: The number of command-line arguments.
  * @argv: An array of pointers to the arguments.
