@@ -1,6 +1,6 @@
 #include <fcntl.h>
 #include <unistd.h>
-#include <string.h>i
+#include <string.h>
 #include "main.h"
 
 /**
