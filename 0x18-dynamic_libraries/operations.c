@@ -1,5 +1,6 @@
 // File: operations.c
 #include "Python.h"
+#include <stddef.h>
 
 /**
  * add - Adds two integers.
@@ -23,9 +24,9 @@ int mul(int a, int b) {
 }
 
 /**
- * div - Divides two integers.
+ * my_div - Divides two integers.
  */
-int div(int a, int b) {
+int my_div(int a, int b) {
 	if (b == 0) {
 		PyErr_SetString(PyExc_ZeroDivisionError, "division by zero");
 		return -1;  // Error
@@ -74,7 +75,7 @@ static PyObject *py_div(PyObject *self, PyObject *args) {
 	if (!PyArg_ParseTuple(args, "ii", &a, &b)) {
 		return NULL;
 	}
-	return PyLong_FromLong(div(a, b));
+	return PyLong_FromLong(my_div(a, b));
 }
 
 static PyObject *py_mod(PyObject *self, PyObject *args) {
@@ -100,9 +101,10 @@ static struct PyModuleDef module = {
 	"operations",  // Module name
 	NULL,          // Documentation
 	-1,            // Size of per-interpreter state or -1
-	methods
+	methods        // Methods
 };
 
 PyMODINIT_FUNC PyInit_operations(void) {
 	return PyModule_Create(&module);
 }
+
